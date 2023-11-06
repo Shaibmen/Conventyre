@@ -1,0 +1,10 @@
+C:\Users\Миша\Projects\ProjectC\Conventer\bin\Debug\Conventer.exe.config
+C:\Users\Миша\Projects\ProjectC\Conventer\bin\Debug\Conventer.exe
+C:\Users\Миша\Projects\ProjectC\Conventer\bin\Debug\Conventer.pdb
+C:\Users\Миша\Projects\ProjectC\Conventer\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Миша\Projects\ProjectC\Conventer\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Миша\Projects\ProjectC\Conventer\obj\Debug\Conventer.csproj.AssemblyReference.cache
+C:\Users\Миша\Projects\ProjectC\Conventer\obj\Debug\Conventer.csproj.CoreCompileInputs.cache
+C:\Users\Миша\Projects\ProjectC\Conventer\obj\Debug\Conventer.csproj.CopyComplete
+C:\Users\Миша\Projects\ProjectC\Conventer\obj\Debug\Conventer.exe
+C:\Users\Миша\Projects\ProjectC\Conventer\obj\Debug\Conventer.pdb
