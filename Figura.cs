@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Conventer
 {
-    internal class Figura
+    [Serializable]
+    public class Figura
     {
         public string Name { get; set; }
         public string Height { get; set; }

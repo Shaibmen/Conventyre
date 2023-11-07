@@ -18,3 +18,13 @@ C:\Projects\C\Conventyre\obj\Debug\Conventer.csproj.CoreCompileInputs.cache
 C:\Projects\C\Conventyre\obj\Debug\Conventer.csproj.CopyComplete
 C:\Projects\C\Conventyre\obj\Debug\Conventer.exe
 C:\Projects\C\Conventyre\obj\Debug\Conventer.pdb
+C:\Users\Миша\Projects\ProjectC\Conventyre\bin\Debug\Conventer.exe.config
+C:\Users\Миша\Projects\ProjectC\Conventyre\bin\Debug\Conventer.exe
+C:\Users\Миша\Projects\ProjectC\Conventyre\bin\Debug\Conventer.pdb
+C:\Users\Миша\Projects\ProjectC\Conventyre\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Миша\Projects\ProjectC\Conventyre\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Миша\Projects\ProjectC\Conventyre\obj\Debug\Conventer.csproj.AssemblyReference.cache
+C:\Users\Миша\Projects\ProjectC\Conventyre\obj\Debug\Conventer.csproj.CoreCompileInputs.cache
+C:\Users\Миша\Projects\ProjectC\Conventyre\obj\Debug\Conventer.csproj.CopyComplete
+C:\Users\Миша\Projects\ProjectC\Conventyre\obj\Debug\Conventer.exe
+C:\Users\Миша\Projects\ProjectC\Conventyre\obj\Debug\Conventer.pdb

@@ -9,42 +9,41 @@ using Newtonsoft.Json;
 
 namespace Conventer
 {
-    internal class Conventer
+    public class Conventer
     {
 
         public void Conventiryem(string fileToPath)
         {
             bool IsDone = true;
-            
 
             string[] strokastrochenyka = File.ReadAllLines(fileToPath);
             List<Figura> figyri = new List<Figura>();
 
-           
-
-            /* for (int i = 0; i < strokastrochenyka.Length; i += 3)
-             {
-                 Figura figure = new Figura
-                 {
-                     Name = strokastrochenyka[i],
-                     Weight = strokastrochenyka[i + 1],
-                     Height = strokastrochenyka[i + 2]
-                 };
-
-                 figyri.Add(figure);
-             }*/
-
             Console.Clear();
             Console.WriteLine("Содержание файла:");
             Console.WriteLine("------------------------------------------------------------------");
-            foreach (var stroka in strokastrochenyka)
+            if (fileToPath.EndsWith(".json"))
             {
-                Console.WriteLine(stroka);
+                string Text = File.ReadAllText(fileToPath);
+                List<Figura> result = JsonConvert.DeserializeObject<List<Figura>>(Text);
+                foreach (var item in result)
+                {
+                    Console.WriteLine(item.Name);
+                    Console.WriteLine(item.Weight);
+                    Console.WriteLine(item.Height);
+                }
             }
-            /*foreach (Figura figure in figyri)
+            if (fileToPath.EndsWith(".txt"))
             {
-                Console.WriteLine($"Название: {figure.Name}, Высота: {figure.Height}, Ширина: {figure.Weight}");
-            }*/
+
+                foreach (var line in strokastrochenyka)
+                {
+                    Console.WriteLine(line);
+                }
+           
+            }
+            
+
             Console.WriteLine("------------------------------------------------------------------");
             Console.WriteLine("Введите в какой формат нужно перезаписать \'json\'\'xml\'\'txt\'");
             Console.WriteLine("------------------------------------------------------------------");
@@ -82,10 +81,10 @@ namespace Conventer
             }
         }
 
-       /* private void TxtConventer(List<Figura> figyri)
+/*        private void TxtConventer(List<Figura> figyri)
         {
             string NewPathTxt = Console.ReadLine();
-            File.WriteAllText(NewPathTxt, );
+            File.WriteAllText(NewPathTxt);
         }*/
 
     }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Conventer
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -18,6 +18,7 @@ namespace Conventer
             Conventer conventer = new Conventer();
             string fileToPath = Console.ReadLine();
             conventer.Conventiryem(fileToPath);
+
 
 
            /* Console.WriteLine("Введите путь до файла вместе с названием, который надо открыть");
