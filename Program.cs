@@ -13,11 +13,26 @@ namespace Conventer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите путь до файла вместе с названием, который надо открыть");
-            Console.WriteLine("--------------------------------------------------------------------------");
-            Conventer conventer = new Conventer();
-            string fileToPath = Console.ReadLine();
-            conventer.Conventiryem(fileToPath);
+           
+                Console.WriteLine("Введите путь до файла вместе с названием, который надо открыть");
+                Console.WriteLine("--------------------------------------------------------------------------");
+                Conventer conventer = new Conventer();
+                string fileToPath = Console.ReadLine();
+            while (true)
+            {
+                Console.WriteLine("Для сохранения файлов F1 Для выхода Escape");
+                ConsoleKeyInfo KeyChoise = Console.ReadKey();
+
+                if (KeyChoise.Key == ConsoleKey.F1)
+                {
+                    conventer.Conventiryem(fileToPath);
+                }
+                if (KeyChoise.Key == ConsoleKey.Escape)
+                {
+                   break;
+                }
+            }
+            
 
 
 

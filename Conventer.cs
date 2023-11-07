@@ -9,19 +9,33 @@ using Newtonsoft.Json;
 
 namespace Conventer
 {
-    public class Conventer
+    internal class Conventer
     {
 
         public void Conventiryem(string fileToPath)
         {
             bool IsDone = true;
+            
 
             string[] strokastrochenyka = File.ReadAllLines(fileToPath);
             List<Figura> figyri = new List<Figura>();
 
-            Console.Clear();
-            Console.WriteLine("Содержание файла:");
-            Console.WriteLine("------------------------------------------------------------------");
+
+            if (fileToPath.EndsWith(".txt"))
+            {
+                for (int i = 0; i < strokastrochenyka.Length; i += 3)
+                {
+                    Figura figure = new Figura
+                    {
+                        Name = strokastrochenyka[i],
+                        Weight = strokastrochenyka[i + 1],
+                        Height = strokastrochenyka[i + 2]
+                    };
+
+                    figyri.Add(figure);
+                }
+            }
+
             if (fileToPath.EndsWith(".json"))
             {
                 string Text = File.ReadAllText(fileToPath);
@@ -31,19 +45,32 @@ namespace Conventer
                     Console.WriteLine(item.Name);
                     Console.WriteLine(item.Weight);
                     Console.WriteLine(item.Height);
+                    figyri.Add(item);
                 }
             }
-            if (fileToPath.EndsWith(".txt"))
-            {
 
-                foreach (var line in strokastrochenyka)
+            if (fileToPath.EndsWith(".xml"))
+            {
+                for (int i = 0; i < strokastrochenyka.Length; i += 3)
                 {
-                    Console.WriteLine(line);
+                    Figura figure = new Figura
+                    {
+                        Name = strokastrochenyka[i],
+                        Weight = strokastrochenyka[i + 1],
+                        Height = strokastrochenyka[i + 2]
+                    };
+
+                    figyri.Add(figure);
                 }
-           
+            }
+            Console.Clear();
+            Console.WriteLine("Содержание файла:");
+            Console.WriteLine("------------------------------------------------------------------");
+            foreach (var stroka in strokastrochenyka)
+            {
+                Console.WriteLine(stroka);
             }
             
-
             Console.WriteLine("------------------------------------------------------------------");
             Console.WriteLine("Введите в какой формат нужно перезаписать \'json\'\'xml\'\'txt\'");
             Console.WriteLine("------------------------------------------------------------------");
@@ -58,6 +85,11 @@ namespace Conventer
             {
                 XmlConventer(figyri);
             }
+
+            if(choiseFormat == "txt")
+            {
+                TxtConventer(figyri);
+            }
         }
         private void JsonConventer(List<Figura> figyri)
         {
@@ -71,21 +103,30 @@ namespace Conventer
 
         private void XmlConventer(List<Figura> figyri)
         {
-            XmlSerializer xml = new XmlSerializer(typeof(Figura));
+            /*XmlSerializer xml = new XmlSerializer(typeof(Figura));
             Console.WriteLine("Введите новый путь файла(на конце нужно написать расширение\'.xml\'");
             Console.WriteLine("------------------------------------------------------------------");
             string NewPathXml = Console.ReadLine();
             using (FileStream PathXml = new FileStream(NewPathXml, FileMode.OpenOrCreate))
             {
                 xml.Serialize(PathXml, figyri);
+            }*/
+            Console.WriteLine("Введите новый путь файла(на конце нужно написать расширение\'.xml\'");
+            Console.WriteLine("------------------------------------------------------------------");
+            XmlSerializer serka = new XmlSerializer(figyri.GetType());
+            string NewPathXml = Console.ReadLine();
+            using (StreamWriter neznau = new StreamWriter(NewPathXml))
+            {
+                serka.Serialize(neznau, figyri);
             }
         }
 
-/*        private void TxtConventer(List<Figura> figyri)
+        private void TxtConventer(List<Figura> figyri)
         {
             string NewPathTxt = Console.ReadLine();
-            File.WriteAllText(NewPathTxt);
-        }*/
+            File.AppendAllText(NewPathTxt, figyri.ToString());
+            //а тут чёта не получилось, я не придумал как это сделать(
+        }
 
     }
 }
